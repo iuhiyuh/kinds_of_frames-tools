@@ -18,14 +18,16 @@ if not os.path.exists("".join(opt.target_path)):
     os.mkdir("".join(opt.target_path))
 cap = cv2.VideoCapture(opt.videos_path)
 success_get, frame = cap.read()
-while success_get:
-    if cut_start-1 <= i & i <= cut_end-1:
-        print("load: 第 %d 帧 / 从 %d 帧，到 %d 帧" % (i+1, cut_start, cut_end))
-        success_get, frame = cap.read()
-        cv2.imencode(os.path.join(opt.target_path, str(i) + '.png'), frame)[1] \
-            .tofile(os.path.join(opt.target_path, str(i) + '.png'))
-    elif i > cut_end:
+while True:
+    success_get, frame = cap.read()
+    if success_get:
+        i += 1
+        if cut_start - 1 <= i & i <= cut_end - 1:
+            print("load: 第 %d 帧 / 从 %d 帧，到 %d 帧" % (i + 1, cut_start, cut_end))
+            cv2.imencode(os.path.join(opt.target_path, str(i) + '.png'), frame)[1] \
+                .tofile(os.path.join(opt.target_path, str(i) + '.png'))
+    else:
         break
-    i += 1
+
     cv2.waitKey(1)
 cap.release()
