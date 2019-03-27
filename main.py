@@ -33,7 +33,7 @@ for video in os.listdir(opt.videos_path):
                 print("load: 第 %d 帧 / 从 %d 帧，到 %d 帧" % (i-1, cut_start, cut_end))
                 cv2.imencode(os.path.join(opt.target_path, str(i-1) + '.png'), frame)[1]\
                     .tofile(os.path.join(opt.target_path, str(i-1) + '.png'))
-            if i > cut_end:
+            if i >= cut_end+2:
                 break
         else:
             break
