@@ -24,4 +24,6 @@ python excel.py "C:\Users\admin\Desktop\dog.csv" "C:\Users\admin\Desktop\result.
 ```
 
 2. demo
+<p>
 <img src="utils/demo.gif"\>
+</p>
