@@ -17,7 +17,7 @@ if not os.path.exists(opt.target_path):
     os.mkdir(opt.target_path)
 
 for video in os.listdir(opt.videos_path):
-    if ('.avi' or '.mp4') not in video:
+    if ('.avi' and '.mp4') not in video:
       continue
     
     name, ext = os.path.splitext(video)
