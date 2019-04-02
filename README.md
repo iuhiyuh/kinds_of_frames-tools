@@ -1,4 +1,4 @@
-# split_frame_from_video
+# split frame from video
 
 ## 从视频中切分单帧图片
 ### 说明：
@@ -27,3 +27,13 @@ python excel.py "C:\Users\admin\Desktop\dog.csv" "C:\Users\admin\Desktop\result.
 <p>
 <img src="utils/demo.gif"\>
 </p>
+
+# Check empty directories
+如果你想检测root_path下的两层子目录是否为空
+1. chake_empty_dir.py 
+```python
+# 删除空目录
+python chake_empty_dir.py "root_path" 1"
+# 不删除空目录
+python chake_empty_dir.py "root_path" 0"
+```
